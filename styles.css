@@ -156,9 +156,10 @@ em { font-style: italic; }
   overflow: hidden; background: var(--black);
 }
 .hero-media { position: absolute; inset: 0; z-index: 0; }
-.hero-placeholder {
+.hero-video {
+  position: absolute; inset: 0;
   width: 100%; height: 100%;
-  background: linear-gradient(135deg, #0D0D0D 0%, #1a2a28 40%, #0d1f1e 100%);
+  object-fit: cover; object-position: center;
 }
 .hero-vignette {
   position: absolute; inset: 0;
