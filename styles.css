@@ -680,10 +680,14 @@ h2.light em { color: var(--teal); }
 .contact-side > p { font-size: .9rem; color: var(--muted); margin-bottom: 24px; line-height: 1.65; }
 .contact-infos { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
 .ci {
-  display: flex; align-items: center; gap: 10px;
-  font-size: .875rem; color: var(--muted);
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: .875rem; color: var(--muted); line-height: 1.5;
 }
-.ci svg { width: 16px; height: 16px; color: var(--teal); }
+.ci svg { width: 16px; height: 16px; color: var(--teal); flex-shrink: 0; margin-top: 2px; }
+.map-embed {
+  border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--border); margin-top: 4px;
+}
 .socials { display: flex; gap: 10px; }
 .social-btn {
   width: 40px; height: 40px; border-radius: 10px;
