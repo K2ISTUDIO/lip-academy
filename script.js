@@ -1,3 +1,21 @@
+// ===== HERO VIDEO AUTOPLAY =====
+const heroVideo = document.getElementById('hero-video');
+if (heroVideo) {
+  heroVideo.muted = true;
+  const tryPlay = () => {
+    heroVideo.play().catch(() => {
+      // If blocked, retry on first user interaction
+      document.addEventListener('click', () => heroVideo.play(), { once: true });
+      document.addEventListener('touchstart', () => heroVideo.play(), { once: true });
+    });
+  };
+  if (heroVideo.readyState >= 2) {
+    tryPlay();
+  } else {
+    heroVideo.addEventListener('canplay', tryPlay, { once: true });
+  }
+}
+
 // ===== NAV SCROLL =====
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
