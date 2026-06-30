@@ -729,6 +729,10 @@ h2.light em { color: var(--teal); }
 .footer-col h6 { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
 .footer-col a { display: block; font-size: .85rem; color: rgba(255,255,255,.5); margin-bottom: 10px; transition: color .2s; cursor: pointer; }
 .footer-col a:hover { color: rgba(255,255,255,.9); }
+.footer-seo {
+  font-size: .72rem; color: rgba(255,255,255,.2); line-height: 1.6;
+  padding-bottom: 20px; text-align: center;
+}
 .footer-bottom {
   padding-top: 28px; border-top: 1px solid rgba(255,255,255,.07);
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
