@@ -99,8 +99,12 @@ em { font-style: italic; }
 
 .nav-logo { display: flex; align-items: center; flex-shrink: 0; cursor: pointer; }
 .logo-img { height: 44px; width: auto; }
-.logo-light { display: block; }
-.logo-dark-img { display: none; }
+/* fond noir du logo disparaît sur nav sombre via screen */
+.logo-light { display: none; }
+.logo-dark-img { display: block; mix-blend-mode: screen; }
+/* fond blanc du logo disparaît sur nav blanche via multiply */
+.nav.scrolled .logo-dark-img { display: none; }
+.nav.scrolled .logo-light { display: block; mix-blend-mode: multiply; }
 
 .nav-links { display: flex; align-items: center; gap: 4px; flex: 1; justify-content: center; }
 .nav-links a {
