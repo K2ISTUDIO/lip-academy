@@ -12,9 +12,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
+<div class="site-wrapper">
 
   <!-- ===== NAV ===== -->
   <header class="nav" id="nav">
@@ -37,25 +38,6 @@
       </button>
     </div>
 
-    <!-- mobile drawer -->
-    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
-      <div class="drawer-header">
-        <img src="logo-color.png" alt="L.I.P Academy" class="drawer-logo">
-        <button class="drawer-close" id="drawer-close" aria-label="Fermer le menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <nav class="drawer-links">
-        <a href="#academie">L'académie</a>
-        <a href="#professeur">Professeur</a>
-        <a href="#programmes">Programmes</a>
-        <a href="#planning">Planning</a>
-        <a href="#tarifs">Tarifs</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a href="#contact" class="drawer-cta">Cours d'essai gratuit</a>
-    </div>
-    <div class="drawer-overlay" id="drawer-overlay"></div>
   </header>
 
   <!-- ===== HERO ===== -->
@@ -770,6 +752,27 @@
     </div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+
+  <!-- mobile drawer (outside header to avoid stacking context issues) -->
+  <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <img src="logo-color.png" alt="L.I.P Academy" class="drawer-logo">
+      <button class="drawer-close" id="drawer-close" aria-label="Fermer le menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="#academie">L'académie</a>
+      <a href="#professeur">Professeur</a>
+      <a href="#programmes">Programmes</a>
+      <a href="#planning">Planning</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="drawer-cta">Cours d'essai gratuit</a>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <script src="script.js?v=5"></script>
 </body>
 </html>
