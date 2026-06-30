@@ -25,19 +25,36 @@ window.addEventListener('scroll', () => {
 // ===== BURGER / DRAWER =====
 const burger = document.getElementById('burger');
 const drawer = document.getElementById('nav-drawer');
+const drawerClose = document.getElementById('drawer-close');
+const drawerOverlay = document.getElementById('drawer-overlay');
+
+function openDrawer() {
+  drawer.classList.add('open');
+  drawerOverlay.classList.add('open');
+  burger.classList.add('open');
+  burger.setAttribute('aria-expanded', 'true');
+  drawer.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDrawer() {
+  drawer.classList.remove('open');
+  drawerOverlay.classList.remove('open');
+  burger.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  drawer.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
 
 burger.addEventListener('click', () => {
-  const open = drawer.classList.toggle('open');
-  burger.setAttribute('aria-expanded', open);
-  document.body.style.overflow = open ? 'hidden' : '';
+  drawer.classList.contains('open') ? closeDrawer() : openDrawer();
 });
 
+drawerClose.addEventListener('click', closeDrawer);
+drawerOverlay.addEventListener('click', closeDrawer);
+
 drawer.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    drawer.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  });
+  a.addEventListener('click', closeDrawer);
 });
 
 // ===== SMOOTH SCROLL =====

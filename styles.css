@@ -122,30 +122,74 @@ em { font-style: italic; }
 .nav-cta:hover { background: rgba(255,255,255,.25); }
 
 .burger {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 4px;
+  display: none; flex-direction: column; justify-content: center; gap: 5px;
+  background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.25);
+  border-radius: 8px; cursor: pointer; padding: 8px; width: 40px; height: 40px;
+  transition: background .2s;
 }
-.burger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all .25s; }
+.burger span { display: block; width: 18px; height: 1.5px; background: #fff; border-radius: 2px; transition: all .25s; }
+.nav.scrolled .burger { background: var(--off); border-color: var(--border); }
+.nav.scrolled .burger span { background: var(--black); }
+.burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-/* Mobile drawer */
+/* Overlay */
+.drawer-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.5); z-index: 149;
+  backdrop-filter: blur(4px);
+}
+.drawer-overlay.open { display: block; }
+
+/* Mobile drawer — slide depuis la droite */
 .nav-drawer {
-  display: none; flex-direction: column; gap: 0;
-  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--white); z-index: 99;
-  padding: 100px 32px 48px;
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: min(360px, 90vw);
+  background: var(--white); z-index: 150;
+  display: flex; flex-direction: column;
+  padding: 0;
+  transform: translateX(100%);
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+  box-shadow: -8px 0 32px rgba(0,0,0,.15);
 }
-.nav-drawer.open { display: flex; }
-.nav-drawer a {
-  font-size: 1.4rem; font-weight: 600; color: var(--text);
-  padding: 14px 0; border-bottom: 1px solid var(--border);
-  transition: color .2s; cursor: pointer;
+.nav-drawer.open { transform: translateX(0); }
+
+.drawer-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; border-bottom: 1px solid var(--border);
 }
-.nav-drawer a:hover { color: var(--teal); }
+.drawer-logo { height: 40px; width: auto; }
+.drawer-close {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--off); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .2s;
+}
+.drawer-close svg { width: 18px; height: 18px; color: var(--text); }
+.drawer-close:hover { background: var(--border); }
+
+.drawer-links {
+  display: flex; flex-direction: column;
+  padding: 12px 0; flex: 1; overflow-y: auto;
+}
+.drawer-links a {
+  font-size: 1.1rem; font-weight: 600; color: var(--text);
+  padding: 16px 24px; border-bottom: 1px solid var(--off);
+  transition: color .2s, background .2s; cursor: pointer;
+  display: block;
+}
+.drawer-links a:hover { color: var(--teal); background: var(--teal-pale); }
+
 .drawer-cta {
-  margin-top: 24px; background: var(--teal); color: #fff !important;
-  padding: 14px 28px !important; border-radius: 100px; text-align: center;
-  border: none !important; font-size: .95rem !important;
+  margin: 20px 24px 32px;
+  display: block; text-align: center;
+  background: var(--teal); color: #fff;
+  padding: 14px 24px; border-radius: 100px;
+  font-size: .95rem; font-weight: 700;
+  transition: background .2s; cursor: pointer;
 }
+.drawer-cta:hover { background: var(--teal-dark); }
 
 /* ===== HERO ===== */
 .hero {
