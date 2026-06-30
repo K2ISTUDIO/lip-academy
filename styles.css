@@ -86,8 +86,6 @@ em { font-style: italic; }
 }
 .nav.scrolled .nav-links a { color: var(--text); }
 .nav.scrolled .nav-links a:hover { color: var(--teal); }
-.nav.scrolled .logo-light { display: none; }
-.nav.scrolled .logo-dark-img { display: block; }
 .nav.scrolled .nav-cta { background: var(--teal); color: #fff; }
 .nav.scrolled .nav-cta:hover { background: var(--teal-dark); }
 .nav.scrolled .burger span { background: var(--black); }
