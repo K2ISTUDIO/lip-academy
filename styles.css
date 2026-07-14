@@ -480,6 +480,18 @@ h2.light em { color: var(--teal); }
 }
 .time-slot.tag-grappling { background: #F0EDFF; }
 .time-slot.tag-grappling strong { color: #5B4FCF; }
+.time-slot.tag-nogi { background: #FFE8E8; }
+.time-slot.tag-nogi strong { color: #C0392B; }
+.time-slot.tag-kids { background: #FFF0FB; }
+.time-slot.tag-kids strong { color: #C0188E; }
+.time-slot.tag-kids2 { background: #FEFBE0; }
+.time-slot.tag-kids2 strong { color: #8A7A00; }
+.time-slot.tag-bases { background: #E6F7F7; }
+.time-slot.tag-bases strong { color: #1A7A74; }
+.time-slot.tag-sparring { background: #E8F5E9; }
+.time-slot.tag-sparring strong { color: #2E7D32; }
+.time-slot.tag-femmes { background: #FCE4EC; }
+.time-slot.tag-femmes strong { color: #AD1457; }
 .planning-block {
   border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px;
 }
