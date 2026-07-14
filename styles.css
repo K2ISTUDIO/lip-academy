@@ -628,20 +628,40 @@ h2.light em { color: var(--teal); }
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 16px; margin-bottom: 28px;
 }
+.tarif-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px; margin-left: auto; margin-right: auto;
+}
 .tarif-card {
   position: relative; border: 1.5px solid var(--border);
-  border-radius: var(--radius-lg); padding: 28px 24px;
+  border-radius: var(--radius-lg); padding: 36px 32px;
   transition: box-shadow .2s, border-color .2s;
+  display: flex; flex-direction: column; gap: 0;
 }
 .tarif-card:hover { box-shadow: var(--shadow-lg); border-color: var(--teal); }
 .tarif-featured { border-color: var(--teal); background: var(--teal-pale); }
 .tarif-badge {
   display: inline-block; padding: 3px 10px; background: var(--teal);
   color: #fff; border-radius: 100px; font-size: .7rem; font-weight: 700;
-  letter-spacing: .06em; text-transform: uppercase; margin-bottom: 10px;
+  letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px;
 }
-.tarif-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-.tarif-val { font-family: var(--font); font-size: 1.3rem; color: var(--teal); margin-bottom: 10px; }
+.tarif-card h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; }
+.tarif-val {
+  font-family: var(--font); font-size: 3rem; font-weight: 800;
+  color: var(--teal); line-height: 1; margin-bottom: 24px;
+  display: flex; align-items: flex-end; gap: 4px;
+}
+.tarif-unit { font-size: 1.1rem; font-weight: 600; line-height: 1.4; }
+.tarif-unit small { display: block; font-size: .75rem; font-weight: 500; color: var(--muted); }
+.tarif-includes {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 28px; flex: 1;
+}
+.tarif-includes li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: .875rem; color: var(--text); line-height: 1.4;
+}
+.tarif-includes li svg { width: 16px; height: 16px; color: var(--teal); flex-shrink: 0; margin-top: 2px; }
 .tarif-card > p { font-size: .85rem; color: var(--muted); margin-bottom: 20px; line-height: 1.55; }
 .reductions {
   display: flex; gap: 20px; justify-content: center;
