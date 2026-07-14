@@ -80,6 +80,25 @@ document.querySelectorAll(
   '.benefit-card, .prog-card, .special-card, .planning-block, .tarif-card, .temo-card, .disc-item, .valeur-item, .ep-item, .step-item'
 ).forEach(el => { el.classList.add('fade-up'); io.observe(el); });
 
+// ===== NEWSLETTER FORM =====
+const nlForm = document.getElementById('newsletter-form');
+if (nlForm) {
+  nlForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = nlForm.querySelector('[type="submit"]');
+    const original = btn.innerHTML;
+    btn.textContent = 'Inscription confirmée !';
+    btn.disabled = true;
+    btn.style.background = '#2EA09A';
+    setTimeout(() => {
+      btn.innerHTML = original;
+      btn.disabled = false;
+      btn.style.background = '';
+      nlForm.reset();
+    }, 4000);
+  });
+}
+
 // ===== PLANNING TABS =====
 document.querySelectorAll('.ptab').forEach(tab => {
   tab.addEventListener('click', () => {

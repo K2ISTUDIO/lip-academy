@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=17">
+  <link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
 <div class="site-wrapper">
@@ -26,10 +26,11 @@
       </a>
       <nav class="nav-links" id="nav-links">
         <a href="#academie">L'académie</a>
-        <a href="#professeur">Professeur</a>
+        <a href="#professeur">Équipe</a>
         <a href="#programmes">Programmes</a>
         <a href="#planning">Planning</a>
         <a href="#tarifs">Tarifs</a>
+        <a href="#newsletter">Newsletter</a>
         <a href="#contact">Contact</a>
       </nav>
       <a href="#contact" class="nav-cta">Cours d'essai gratuit</a>
@@ -573,60 +574,54 @@
   <!-- ===== PROFESSEUR ===== -->
   <section class="section-dark" id="professeur">
     <div class="container">
-      <div class="prof-split">
-        <div class="prof-photo">
-          <div class="photo-frame tall dark-frame">
-            <img src="Stephane-hennequin-LIP.png" alt="Stéphane Hennequin — Ceinture Noire BJJ" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:var(--radius-lg);">
+      <div class="section-head centered">
+        <span class="eyebrow light">L'équipe</span>
+        <h2 class="light">Nos <em>professeurs</em></h2>
+      </div>
+      <div class="team-grid">
+
+        <!-- Stéphane Hennequin -->
+        <div class="team-card featured">
+          <div class="team-photo">
+            <img src="Stephane-hennequin-LIP.png" alt="Stéphane Hennequin">
+            <span class="team-role">Head Coach</span>
           </div>
-          <div class="belt-badge">
-            <div class="belt-visual"></div>
-            <span>Ceinture Noire 3<sup>e</sup> degré</span>
-          </div>
-        </div>
-        <div class="prof-info">
-          <span class="eyebrow light">Le professeur</span>
-          <h2 class="light">Stéphane<br><em>Hennequin</em></h2>
-          <div class="prof-creds">
-            <div class="cred">
-              <span class="cred-val teal">25+</span>
-              <span class="cred-lbl">ans de pratique</span>
+          <div class="team-info">
+            <h3>Stéphane Hennequin</h3>
+            <div class="team-belt">
+              <div class="belt-visual"></div>
+              <span>Ceinture Noire 3<sup>e</sup> degré</span>
             </div>
-            <div class="cred">
-              <span class="cred-val teal">20+</span>
-              <span class="cred-lbl">ans d'enseignement</span>
+            <div class="team-stats">
+              <span><strong>25+</strong> ans de pratique</span>
+              <span><strong>20+</strong> ans d'enseignement</span>
+              <span><strong>4×</strong> Champion de France</span>
             </div>
-            <div class="cred">
-              <span class="cred-val teal">4×</span>
-              <span class="cred-lbl">Champion de France</span>
-            </div>
-          </div>
-          <div class="palmares">
-            <h5>Palmarès</h5>
-            <ul class="palm-list">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"/></svg>
-                4× Champion CFJJB France — Black Belt Master -70 kg
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                Vainqueur UAEJJF Londres
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                Multiples victoires CFJJB / IBJJF Opens
-              </li>
+            <ul class="team-palmares">
+              <li>4× Champion CFJJB France — Black Belt Master -70 kg</li>
+              <li>Vainqueur UAEJJF Londres</li>
+              <li>Multiples victoires CFJJB / IBJJF Opens</li>
             </ul>
-          </div>
-          <div class="specialites">
-            <h5>Spécialités techniques</h5>
             <div class="spec-pills">
               <span class="pill">Omoplata</span>
               <span class="pill">Belly Down Armbar</span>
-              <span class="pill">Certifié IBJJF / CFJJB</span>
+              <span class="pill">Certifié IBJJF</span>
             </div>
           </div>
-          <p class="prof-quote">"Pédagogique, progressif, structuré — centré sur la compréhension, la répétition intelligente et l'adaptation au niveau de chacun."</p>
         </div>
+
+        <!-- Placeholder -->
+        <div class="team-card placeholder">
+          <div class="team-photo empty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span class="team-role coming">Bientôt</span>
+          </div>
+          <div class="team-info">
+            <h3 class="muted">Professeur à venir</h3>
+            <p class="team-desc">Un nouveau membre rejoint bientôt l'équipe pédagogique de L.I.P Academy.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -921,6 +916,30 @@
     </div>
   </section>
 
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="section bg-off" id="newsletter">
+    <div class="container">
+      <div class="newsletter-wrap">
+        <div class="newsletter-text">
+          <span class="eyebrow">Newsletter</span>
+          <h2>Restez dans<br>la <em>boucle</em></h2>
+          <p>Stages, événements, nouvelles disciplines, résultats de compétition — recevez l'actualité de L.I.P Academy directement dans votre boîte mail.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <div class="nl-row">
+            <input type="email" id="nl-email" name="email" placeholder="votre@email.com" required>
+            <button type="submit" class="btn-teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+              S'inscrire
+            </button>
+          </div>
+          <p class="nl-disclaimer">Aucun spam. Désabonnement en un clic. Données protégées.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
@@ -983,16 +1002,17 @@
     </div>
     <nav class="drawer-links">
       <a href="#academie">L'académie</a>
-      <a href="#professeur">Professeur</a>
+      <a href="#professeur">Équipe</a>
       <a href="#programmes">Programmes</a>
       <a href="#planning">Planning</a>
       <a href="#tarifs">Tarifs</a>
+      <a href="#newsletter">Newsletter</a>
       <a href="#contact">Contact</a>
     </nav>
     <a href="#contact" class="drawer-cta">Cours d'essai gratuit</a>
   </div>
   <div class="drawer-overlay" id="drawer-overlay"></div>
 
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
