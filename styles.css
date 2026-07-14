@@ -478,6 +478,10 @@ h2.light em { color: var(--teal); }
   display: grid; grid-template-columns: repeat(5, 1fr);
   gap: 16px; margin-bottom: 32px;
 }
+.planning-wrap.seven-cols {
+  grid-template-columns: repeat(7, minmax(160px, 1fr));
+  overflow-x: auto; padding-bottom: 8px;
+}
 .time-slot.tag-grappling { background: #F0EDFF; }
 .time-slot.tag-grappling strong { color: #5B4FCF; }
 .time-slot.tag-nogi { background: #FFE8E8; }
