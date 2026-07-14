@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
 <div class="site-wrapper">
@@ -328,35 +328,89 @@
         <span class="eyebrow">Planning</span>
         <h2>Des créneaux adaptés<br>à <em>votre rythme</em></h2>
       </div>
-      <div class="planning-wrap">
+      <!-- Planning tabs -->
+      <div class="planning-tabs">
+        <button class="ptab active" data-tab="vacances">Vacances scolaires &amp; Été</button>
+        <button class="ptab" data-tab="normal">Période scolaire</button>
+      </div>
+
+      <!-- Vacances / Été -->
+      <div class="planning-wrap" id="tab-vacances">
         <div class="planning-block">
           <h4 class="planning-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            Adultes — Lundi au Vendredi
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636"/></svg>
+            Lundi
           </h4>
           <div class="time-slots">
-            <div class="time-slot"><strong>12h30</strong><span>–</span><strong>13h45</strong></div>
-            <div class="time-slot"><strong>18h00</strong><span>–</span><strong>19h00</strong></div>
-            <div class="time-slot"><strong>19h00</strong><span>–</span><strong>20h00</strong></div>
-            <div class="time-slot"><strong>20h00</strong><span>–</span><strong>21h00</strong></div>
+            <div class="time-slot">
+              <strong>12h30</strong><span>–</span><strong>13h30</strong>
+              <em>JJB Tous niveaux</em>
+            </div>
+          </div>
+        </div>
+        <div class="planning-block">
+          <h4 class="planning-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636"/></svg>
+            Mardi
+          </h4>
+          <div class="time-slots">
+            <div class="time-slot">
+              <strong>19h00</strong><span>–</span><strong>20h00</strong>
+              <em>JJB Tous niveaux</em>
+            </div>
+            <div class="time-slot tag-grappling">
+              <strong>20h00</strong><span>–</span><strong>21h00</strong>
+              <em>Grappling</em>
+            </div>
+          </div>
+        </div>
+        <div class="planning-block">
+          <h4 class="planning-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636"/></svg>
+            Mercredi
+          </h4>
+          <div class="time-slots">
+            <div class="time-slot">
+              <strong>19h30</strong><span>–</span><strong>21h00</strong>
+              <em>JJB Tous niveaux</em>
+            </div>
           </div>
         </div>
         <div class="planning-block">
           <h4 class="planning-label">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
-            Adultes — Week-end
+            Samedi
           </h4>
           <div class="time-slots">
-            <div class="time-slot"><strong>11h00</strong><span>–</span><strong>12h30</strong><em>Sam. &amp; Dim.</em></div>
+            <div class="time-slot tag-grappling">
+              <strong>11h00</strong><span>–</span><strong>12h30</strong>
+              <em>Grappling</em>
+            </div>
           </div>
         </div>
         <div class="planning-block">
           <h4 class="planning-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"/></svg>
-            Enfants
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+            Dimanche
           </h4>
           <div class="time-slots">
-            <div class="time-slot coming">Horaires à venir — <a href="#contact">Contactez-nous</a></div>
+            <div class="time-slot">
+              <strong>10h30</strong><span>–</span><strong>12h00</strong>
+              <em>JJB Tous niveaux</em>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Période scolaire -->
+      <div class="planning-wrap hidden" id="tab-normal">
+        <div class="planning-block">
+          <h4 class="planning-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+            Horaires à venir
+          </h4>
+          <div class="time-slots">
+            <div class="time-slot coming">Planning en cours de finalisation — <a href="#contact">Contactez-nous</a></div>
           </div>
         </div>
       </div>
@@ -778,6 +832,6 @@
   </div>
   <div class="drawer-overlay" id="drawer-overlay"></div>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>

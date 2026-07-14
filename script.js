@@ -80,6 +80,18 @@ document.querySelectorAll(
   '.benefit-card, .prog-card, .special-card, .planning-block, .tarif-card, .temo-card, .disc-item, .valeur-item, .ep-item, .step-item'
 ).forEach(el => { el.classList.add('fade-up'); io.observe(el); });
 
+// ===== PLANNING TABS =====
+document.querySelectorAll('.ptab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const target = tab.dataset.tab;
+    document.querySelectorAll('.planning-wrap').forEach(wrap => {
+      wrap.classList.toggle('hidden', wrap.id !== 'tab-' + target);
+    });
+  });
+});
+
 // ===== FORM SUBMIT =====
 const form = document.getElementById('contact-form');
 form.addEventListener('submit', e => {
