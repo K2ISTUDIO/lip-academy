@@ -501,17 +501,22 @@ h2.light em { color: var(--teal); }
   text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
 }
 .planning-label svg { width: 16px; height: 16px; color: var(--teal); }
-.time-slots { display: flex; flex-direction: column; gap: 10px; }
+.time-slots { display: flex; flex-direction: column; gap: 8px; }
 .time-slot {
-  display: flex; align-items: center; gap: 10px;
-  padding: 14px 16px; background: var(--off);
-  border-radius: 8px; font-size: 1.1rem;
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 12px 14px; background: var(--off);
+  border-radius: 8px;
+}
+.time-slot .ts-time {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 1rem;
 }
 .time-slot strong { color: var(--black); font-weight: 700; }
-.time-slot span { color: var(--muted); }
-.time-slot em { font-size: .75rem; color: var(--muted); font-style: normal; margin-left: auto; }
+.time-slot span { color: var(--muted); font-size: .9rem; }
+.time-slot em { font-size: .78rem; font-weight: 600; color: var(--muted); font-style: normal; }
 .time-slot.coming {
-  font-size: .85rem; color: var(--muted); font-style: italic; gap: 6px;
+  font-size: .85rem; color: var(--muted); font-style: italic;
+  flex-direction: row; align-items: center; gap: 6px;
 }
 .time-slot.coming a { color: var(--teal); font-style: normal; }
 
