@@ -490,6 +490,8 @@ h2.light em { color: var(--teal); }
 }
 .time-slot.tag-grappling { background: #F0EDFF; }
 .time-slot.tag-grappling strong { color: #5B4FCF; }
+.time-slot.tag-openmat { background: #FFF4E5; }
+.time-slot.tag-openmat strong { color: #C96A00; }
 .time-slot.tag-nogi { background: #FFE8E8; }
 .time-slot.tag-nogi strong { color: #C0392B; }
 .time-slot.tag-kids { background: #FFF0FB; }
