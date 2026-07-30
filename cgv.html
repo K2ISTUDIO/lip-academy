@@ -39,6 +39,25 @@
       line-height: 1.75;
       margin-bottom: 12px;
     }
+    .legal-body ul {
+      margin: 8px 0 16px 0;
+      padding: 0;
+      list-style: none;
+    }
+    .legal-body ul li {
+      font-size: .95rem;
+      color: var(--muted);
+      line-height: 1.75;
+      padding-left: 18px;
+      position: relative;
+    }
+    .legal-body ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 700;
+    }
     .legal-body a { color: var(--teal); text-underline-offset: 3px; }
     .legal-date {
       font-size: .8rem;
@@ -107,52 +126,60 @@
 
     <div class="legal-intro">
       <p><strong>LOST IN PARADISE JIUJITSU &amp; SELF DEFENSE</strong><br>
-      6 Rue de la Bonne Rencontre — 77860 Quincy-Voisins<br>
+      Association loi 1901 — SIREN : 102 813 268<br>
+      Siège social : 32 ter rue des Tamaris, 77700 Coupvray<br>
+      Lieu de pratique : Fit'Teix — 6 Rue de la Bonne Rencontre, 77860 Quincy-Voisins<br>
+      Président : Stéphane Hennequin<br>
       <a href="mailto:stephanehennequin@hotmail.com">stephanehennequin@hotmail.com</a></p>
     </div>
 
-    <h2>Article 1 — Accès au club</h2>
-    <p>L'accès au club est autorisé dès la validation de l'inscription, selon les horaires d'ouverture et la formule d'abonnement souscrite.</p>
-    <p>Les sommes versées lors de l'inscription (acompte, abonnement ou carte de cours) ne sont pas remboursables, sauf disposition légale contraire.</p>
+    <h2>Article 1 — Adhésion et accès aux cours</h2>
+    <p>L'accès aux cours est autorisé dès la validation de l'adhésion et le règlement de la cotisation, conformément à la formule choisie.</p>
+    <p>Le premier cours est offert à titre d'essai, sans engagement. Au-delà, toute cotisation versée est définitivement acquise à l'association et ne donnera lieu à aucun remboursement, sauf disposition légale contraire.</p>
 
-    <h2>Article 2 — Abonnement et résiliation</h2>
-    <p><strong>Abonnements avec engagement</strong></p>
-    <p>Les abonnements réglés par prélèvement automatique sont conclus pour la durée d'engagement choisie (6 ou 12 mois selon la formule).</p>
-    <p>À l'issue de cette période, l'abonnement est automatiquement reconduit de mois en mois.</p>
-    <p>L'adhérent peut y mettre fin à tout moment après la période d'engagement en adressant une demande de résiliation par courrier recommandé avec accusé de réception. La résiliation prend effet un mois après la réception du courrier. Tout mois commencé reste dû.</p>
-    <p>Si l'adhérent souhaite que son abonnement s'arrête exactement à la fin de sa période d'engagement, sa demande doit parvenir au club au moins un mois avant cette échéance.</p>
-    <p><strong>Formules à durée déterminée</strong></p>
-    <p>Les abonnements réglés en une seule fois pour une durée déterminée ne peuvent pas être résiliés avant leur terme.</p>
+    <h2>Article 2 — Cotisations et formules</h2>
+    <p>L.I.P Academy propose les formules suivantes :</p>
+    <ul>
+      <li><strong>JJB + No-Gi</strong> : accès aux cours de Jiu-Jitsu Brésilien et No-Gi — 49 € / mois</li>
+      <li><strong>Formule complète</strong> : JJB + No-Gi + accès à la piscine, salle de musculation et sauna de Fit'Teix — 69 € / mois</li>
+    </ul>
+    <p>Les cotisations sont payables selon les modalités convenues lors de l'inscription (mensualités ou règlement unique).</p>
 
-    <h2>Article 3 — Paiement</h2>
-    <p>En cas de rejet de paiement (prélèvement, chèque ou carte bancaire), l'adhérent s'engage à régulariser sa situation dans les meilleurs délais.</p>
-    <p>Le club pourra suspendre l'accès aux installations jusqu'à la régularisation complète des sommes dues.</p>
+    <h2>Article 3 — Résiliation</h2>
+    <p><strong>Cotisations mensuelles</strong></p>
+    <p>En cas de paiement mensuel, l'adhérent peut résilier son adhésion à tout moment en adressant sa demande par e-mail à <a href="mailto:stephanehennequin@hotmail.com">stephanehennequin@hotmail.com</a>. La résiliation prend effet à la fin du mois en cours. Tout mois commencé reste dû.</p>
+    <p><strong>Cotisations annuelles</strong></p>
+    <p>Les cotisations réglées en une seule fois pour une saison sportive complète ne peuvent être ni résiliées ni remboursées avant leur terme, sauf cas de force majeure ou inaptitude médicale dûment justifiée.</p>
 
-    <h2>Article 4 — Aptitude à la pratique sportive</h2>
-    <p>L'adhérent déclare être apte à pratiquer les activités proposées.</p>
-    <p>Lorsque le club le demande, un certificat médical devra être fourni dans un délai d'un mois suivant l'inscription.</p>
-    <p>Une inaptitude médicale déclarée après la souscription ne donne pas droit au remboursement de l'abonnement, sauf disposition légale particulière.</p>
+    <h2>Article 4 — Paiement</h2>
+    <p>En cas de défaut ou de retard de paiement, l'accès aux cours pourra être suspendu jusqu'à régularisation complète de la situation.</p>
+    <p>L'association se réserve le droit d'engager toute procédure de recouvrement nécessaire.</p>
 
-    <h2>Article 5 — Responsabilité</h2>
-    <p>Le club est assuré au titre de sa responsabilité civile.</p>
-    <p>Chaque adhérent est invité à disposer de sa propre assurance responsabilité civile.</p>
-    <p>Le club ne pourra être tenu responsable des accidents résultant du non-respect des consignes de sécurité, d'une mauvaise utilisation du matériel ou d'un comportement inadapté.</p>
+    <h2>Article 5 — Aptitude à la pratique</h2>
+    <p>L'adhérent certifie être en bonne santé et apte à la pratique du Jiu-Jitsu Brésilien et des activités proposées par l'association.</p>
+    <p>Un certificat médical de non contre-indication à la pratique sportive pourra être demandé. Il devra être fourni dans le mois suivant l'inscription.</p>
+    <p>Toute inaptitude médicale survenant en cours de saison ne donne pas droit au remboursement de la cotisation, sauf disposition légale particulière.</p>
 
-    <h2>Article 6 — Respect du règlement</h2>
-    <p>Le club se réserve le droit de suspendre ou d'exclure, sans remboursement, toute personne dont le comportement est incompatible avec le bon fonctionnement de l'établissement, la sécurité ou le respect des autres adhérents.</p>
+    <h2>Article 6 — Responsabilité</h2>
+    <p>L.I.P Academy est couverte par une assurance responsabilité civile pour ses activités.</p>
+    <p>Chaque adhérent est invité à souscrire une assurance individuelle accidents et responsabilité civile. L'association décline toute responsabilité pour les accidents survenant en dehors des créneaux encadrés, ou résultant du non-respect des consignes de sécurité transmises par l'encadrement.</p>
 
-    <h2>Article 7 — Effets personnels</h2>
-    <p>Des vestiaires sont mis à disposition des adhérents.</p>
-    <p>Les effets personnels restent sous la responsabilité de leur propriétaire. Le club décline toute responsabilité en cas de perte, de vol ou de détérioration.</p>
+    <h2>Article 7 — Règlement intérieur et exclusion</h2>
+    <p>Tout adhérent s'engage à respecter l'esprit du club : respect mutuel, humilité, bienveillance et discipline.</p>
+    <p>L'association se réserve le droit de suspendre ou d'exclure, sans remboursement, tout membre dont le comportement serait incompatible avec les valeurs de L.I.P Academy, la sécurité des pratiquants ou le bon déroulement des cours.</p>
 
-    <h2>Article 8 — Données personnelles</h2>
-    <p>Les informations recueillies lors de l'inscription sont utilisées uniquement dans le cadre de la gestion de l'abonnement.</p>
-    <p>Conformément à la réglementation en vigueur, chaque adhérent dispose d'un droit d'accès, de rectification et de suppression de ses données personnelles.</p>
-    <p>Toute demande peut être adressée à : <a href="mailto:stephanehennequin@hotmail.com">stephanehennequin@hotmail.com</a></p>
+    <h2>Article 8 — Effets personnels</h2>
+    <p>Des espaces de rangement sont mis à disposition au sein de Fit'Teix.</p>
+    <p>L.I.P Academy décline toute responsabilité en cas de perte, de vol ou de détérioration des effets personnels des adhérents.</p>
 
-    <h2>Article 9 — Horaires et fermetures</h2>
-    <p>Les horaires d'ouverture sont affichés au club et peuvent être modifiés, notamment pendant les vacances scolaires ou la période estivale.</p>
-    <p>Le club peut également être fermé les jours fériés ou en cas de force majeure, sans que cela ouvre droit à remboursement.</p>
+    <h2>Article 9 — Données personnelles</h2>
+    <p>Les informations collectées lors de l'inscription (nom, prénom, coordonnées) sont utilisées exclusivement pour la gestion des adhésions et la communication interne de l'association.</p>
+    <p>Elles ne sont ni vendues ni transmises à des tiers. Conformément au RGPD, chaque adhérent dispose d'un droit d'accès, de rectification et de suppression de ses données en contactant :<br>
+    <a href="mailto:stephanehennequin@hotmail.com">stephanehennequin@hotmail.com</a></p>
+
+    <h2>Article 10 — Horaires et fermetures</h2>
+    <p>Les horaires des cours sont communiqués via le site de l'académie et peuvent être modifiés en cours de saison, notamment pendant les vacances scolaires, les jours fériés ou en cas de force majeure.</p>
+    <p>Ces modifications ne donnent pas lieu à remboursement. L'association s'engage à informer ses adhérents dans les meilleurs délais en cas de changement.</p>
   </div>
 
   <!-- FOOTER -->
