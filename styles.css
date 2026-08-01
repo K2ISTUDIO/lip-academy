@@ -222,6 +222,10 @@ em { font-style: italic; }
   color: #fff; line-height: 1.0; margin-bottom: 24px; letter-spacing: -.02em;
 }
 .hero-h1 em { color: var(--teal); font-style: italic; }
+.hero-h2 {
+  font-family: var(--font); font-size: clamp(1.1rem, 3vw, 1.6rem); font-weight: 500;
+  color: rgba(255,255,255,.65); letter-spacing: .01em; margin-top: -12px; margin-bottom: 28px;
+}
 .hero-sub {
   font-size: 1.1rem; color: rgba(255,255,255,.65);
   line-height: 1.7; margin-bottom: 40px;
