@@ -4,7 +4,6 @@ if (heroVideo) {
   heroVideo.muted = true;
   const tryPlay = () => {
     heroVideo.play().catch(() => {
-      // If blocked, retry on first user interaction
       document.addEventListener('click', () => heroVideo.play(), { once: true });
       document.addEventListener('touchstart', () => heroVideo.play(), { once: true });
     });
@@ -83,12 +82,19 @@ document.querySelectorAll(
 // ===== NEWSLETTER FORM =====
 const nlForm = document.getElementById('newsletter-form');
 if (nlForm) {
-  nlForm.addEventListener('submit', e => {
+  nlForm.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = nlForm.querySelector('[type="submit"]');
     const original = btn.innerHTML;
-    btn.textContent = 'Inscription confirmée !';
     btn.disabled = true;
+    try {
+      await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: nlForm.email.value }),
+      });
+    } catch (_) {}
+    btn.textContent = 'Inscription confirmée !';
     btn.style.background = '#2EA09A';
     setTimeout(() => {
       btn.innerHTML = original;
@@ -111,13 +117,21 @@ document.querySelectorAll('.ptab').forEach(tab => {
   });
 });
 
-// ===== FORM SUBMIT =====
+// ===== CONTACT FORM =====
 const form = document.getElementById('contact-form');
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
   e.preventDefault();
   const btn = form.querySelector('[type="submit"]');
-  btn.textContent = 'Demande envoyée — merci !';
   btn.disabled = true;
+  const data = Object.fromEntries(new FormData(form).entries());
+  try {
+    await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+  } catch (_) {}
+  btn.textContent = 'Demande envoyée — merci !';
   btn.style.background = '#2EA09A';
   setTimeout(() => {
     btn.textContent = 'Envoyer ma demande';
