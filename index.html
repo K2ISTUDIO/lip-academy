@@ -1192,6 +1192,18 @@
             <label style="display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.75rem;font-weight:700;color:rgba(230,237,243,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em">Téléphone</label>
             <input name="tel" type="tel" placeholder="06 12 34 56 78" required style="width:100%;background:#0D1117;border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:12px 14px;color:#E6EDF3;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;outline:none;box-sizing:border-box">
           </div>
+          <div>
+            <label style="display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.75rem;font-weight:700;color:rgba(230,237,243,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em">Niveau <span style="color:rgba(230,237,243,.3);font-weight:400;text-transform:none;letter-spacing:0">(optionnel)</span></label>
+            <select name="ceinture" style="width:100%;background:#0D1117;border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:12px 14px;color:#E6EDF3;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;outline:none;box-sizing:border-box;appearance:none">
+              <option value="" style="background:#0D1117">— Sélectionnez votre niveau —</option>
+              <option value="Débutant" style="background:#0D1117">🤍 Débutant (aucune expérience)</option>
+              <option value="Ceinture blanche" style="background:#0D1117">⚪ Ceinture blanche</option>
+              <option value="Ceinture bleue" style="background:#0D1117">🔵 Ceinture bleue</option>
+              <option value="Ceinture violette" style="background:#0D1117">🟣 Ceinture violette</option>
+              <option value="Ceinture marron" style="background:#0D1117">🟤 Ceinture marron</option>
+              <option value="Ceinture noire" style="background:#0D1117">⚫ Ceinture noire</option>
+            </select>
+          </div>
           <button type="submit" id="om-submit" style="background:#3DBDB6;color:#fff;border:none;border-radius:10px;padding:15px;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;transition:background .2s;margin-top:4px">
             Recevoir mon pass gratuit 🌴
           </button>
@@ -1253,12 +1265,13 @@
       const nom = this.nom.value.trim();
       const email = this.email.value.trim();
       const tel = this.tel.value.trim();
+      const ceinture = this.ceinture.value;
 
       try {
         await fetch('/api/openmat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prenom, nom, email, tel }),
+          body: JSON.stringify({ prenom, nom, email, tel, ceinture }),
         });
       } catch (_) {}
 

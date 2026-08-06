@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { prenom, nom, email, tel } = req.body;
+  const { prenom, nom, email, tel, ceinture } = req.body;
 
   if (!prenom || !nom || !email || !tel) {
     return res.status(400).json({ error: 'Champs obligatoires manquants' });
@@ -107,6 +107,7 @@ export default async function handler(req, res) {
             <tr><td style="padding:8px 0;color:#888">Nom</td><td>${nom}</td></tr>
             <tr><td style="padding:8px 0;color:#888">Email</td><td><a href="mailto:${email}">${email}</a></td></tr>
             <tr><td style="padding:8px 0;color:#888">Téléphone</td><td>${tel}</td></tr>
+            <tr><td style="padding:8px 0;color:#888">Niveau</td><td>${ceinture || '—'}</td></tr>
             <tr><td style="padding:8px 0;color:#888">Code pass</td><td><strong>${code}</strong></td></tr>
           </table>
           <hr style="margin:24px 0;border:none;border-top:1px solid #eee">
