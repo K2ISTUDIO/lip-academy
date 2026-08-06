@@ -17,7 +17,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'LIP Academy <onboarding@resend.dev>',
+        from: 'LIP Academy <contact@lip-academie.com>',
         to: ['stephanehennequin@hotmail.com'],
         reply_to: email,
         subject: `Nouveau message — ${prenom} ${nom}`,
