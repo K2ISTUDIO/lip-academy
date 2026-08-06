@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         from: 'LIP Academy <contact@lip-academie.com>',
-        to: ['stephanehennequin@hotmail.com'],
+        to: ['stephanehennequin@hotmail.com', 'contact@lip-academie.com'],
         reply_to: email,
         subject: `Nouvelle inscription newsletter — ${email}`,
         html: `
