@@ -1157,5 +1157,117 @@
   <div class="drawer-overlay" id="drawer-overlay"></div>
 
   <script src="script.js?v=8"></script>
+
+  <!-- POPUP OPEN MAT ÉTÉ -->
+  <div id="om-overlay" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px">
+    <div style="background:#161B22;border:1px solid rgba(61,189,182,.3);border-radius:20px;max-width:460px;width:100%;padding:36px 32px;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.6)">
+      <button onclick="omClose()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.07);border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;color:#E6EDF3;font-size:1.1rem;display:flex;align-items:center;justify-content:center;line-height:1">✕</button>
+
+      <div id="om-form-wrap">
+        <div style="text-align:center;margin-bottom:24px">
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(232,84,106,.12);color:#E8546A;border:1px solid rgba(232,84,106,.3);border-radius:999px;padding:5px 14px;font-size:.8rem;font-weight:700;margin-bottom:14px;letter-spacing:.04em">
+            <span style="width:7px;height:7px;background:#E8546A;border-radius:50%;animation:pulse 1.5s infinite;display:inline-block"></span>
+            OFFRE SPÉCIALE · DU 10 AU 31 AOÛT
+          </div>
+          <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:800;color:#E6EDF3;margin:0 0 8px;line-height:1.2">Open Mat &amp; Cours<br><span style="color:#3DBDB6">100% Gratuits</span> en Août 🌴</h2>
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;color:rgba(230,237,243,.6);font-size:.9rem;margin:0">Inscrivez-vous et recevez votre pass par email.</p>
+        </div>
+
+        <form id="om-form" novalidate style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label style="display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.75rem;font-weight:700;color:rgba(230,237,243,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em">Prénom</label>
+              <input name="prenom" type="text" placeholder="Jean" required style="width:100%;background:#0D1117;border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:12px 14px;color:#E6EDF3;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;outline:none;box-sizing:border-box">
+            </div>
+            <div>
+              <label style="display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.75rem;font-weight:700;color:rgba(230,237,243,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em">Nom</label>
+              <input name="nom" type="text" placeholder="Dupont" required style="width:100%;background:#0D1117;border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:12px 14px;color:#E6EDF3;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;outline:none;box-sizing:border-box">
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.75rem;font-weight:700;color:rgba(230,237,243,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em">Email</label>
+            <input name="email" type="email" placeholder="jean@email.com" required style="width:100%;background:#0D1117;border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:12px 14px;color:#E6EDF3;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;outline:none;box-sizing:border-box">
+          </div>
+          <div>
+            <label style="display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.75rem;font-weight:700;color:rgba(230,237,243,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em">Téléphone</label>
+            <input name="tel" type="tel" placeholder="06 12 34 56 78" required style="width:100%;background:#0D1117;border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:12px 14px;color:#E6EDF3;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;outline:none;box-sizing:border-box">
+          </div>
+          <button type="submit" id="om-submit" style="background:#3DBDB6;color:#fff;border:none;border-radius:10px;padding:15px;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;transition:background .2s;margin-top:4px">
+            Recevoir mon pass gratuit 🌴
+          </button>
+        </form>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.75rem;color:rgba(230,237,243,.4);text-align:center;margin-top:12px">Sans engagement · Pass valable du 10 au 31 août 2026</p>
+      </div>
+
+      <div id="om-success" style="display:none;text-align:center;padding:12px 0">
+        <div style="font-size:3rem;margin-bottom:16px">🌴</div>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:800;color:#E6EDF3;margin:0 0 10px">C'est confirmé !</h3>
+        <div id="om-code" style="display:inline-block;background:rgba(61,189,182,.1);border:1px solid rgba(61,189,182,.3);border-radius:8px;padding:8px 20px;font-size:1.1rem;font-weight:800;color:#3DBDB6;letter-spacing:.1em;margin-bottom:14px"></div>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;color:rgba(230,237,243,.6);font-size:.9rem;line-height:1.6">Votre pass a été envoyé par email.<br>On vous attend à Fit'Teix dès le 10 août !</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bandeau flottant -->
+  <div id="om-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:8999;background:linear-gradient(90deg,#1a2a28,#161B22);border-top:1px solid rgba(61,189,182,.3);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="font-size:1.4rem">🌴</span>
+      <div>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.95rem;color:#E6EDF3;margin:0">Open Mat &amp; Cours Gratuits — Spécial Été</p>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;color:rgba(230,237,243,.5);margin:0">Du 10 au 31 août 2026 · Sans engagement</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;flex-shrink:0">
+      <button onclick="omOpen()" style="background:#3DBDB6;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;white-space:nowrap">Je m'inscris</button>
+      <button onclick="document.getElementById('om-banner').remove()" style="background:none;border:none;color:rgba(230,237,243,.4);cursor:pointer;font-size:1.2rem;padding:4px 8px">✕</button>
+    </div>
+  </div>
+
+  <script>
+    // Popup open mat
+    function omOpen() {
+      const el = document.getElementById('om-overlay');
+      el.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function omClose() {
+      document.getElementById('om-overlay').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    document.getElementById('om-overlay').addEventListener('click', function(e) {
+      if (e.target === this) omClose();
+    });
+
+    // Affiche le popup auto après 8s (une seule fois par session)
+    if (!sessionStorage.getItem('om-shown')) {
+      setTimeout(() => { omOpen(); sessionStorage.setItem('om-shown', '1'); }, 8000);
+    }
+
+    document.getElementById('om-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('om-submit');
+      btn.disabled = true;
+      btn.textContent = 'Envoi…';
+
+      const prenom = this.prenom.value.trim();
+      const nom = this.nom.value.trim();
+      const email = this.email.value.trim();
+      const tel = this.tel.value.trim();
+
+      try {
+        await fetch('/api/openmat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prenom, nom, email, tel }),
+        });
+      } catch (_) {}
+
+      const code = `LIP-${tel.replace(/\s/g, '').slice(-4)}-${prenom.slice(0,2).toUpperCase()}`;
+      document.getElementById('om-code').textContent = code;
+      document.getElementById('om-form-wrap').style.display = 'none';
+      document.getElementById('om-success').style.display = 'block';
+      document.getElementById('om-banner').remove();
+    });
+  </script>
 </body>
 </html>
