@@ -721,18 +721,15 @@ h2.light em { color: var(--teal); }
 
 /* ===== TARIFS ===== */
 .tarif-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 16px; margin-bottom: 28px;
 }
-.tarif-grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 800px; margin-left: auto; margin-right: auto;
-}
+.tarif-grid-3 { grid-template-columns: repeat(3, 1fr); }
 .tarif-card {
   position: relative; border: 1.5px solid var(--border);
-  border-radius: var(--radius-lg); padding: 36px 32px;
+  border-radius: var(--radius-lg); padding: 32px 28px;
   transition: box-shadow .2s, border-color .2s;
-  display: flex; flex-direction: column; gap: 0;
+  display: flex; flex-direction: column; background: var(--white);
 }
 .tarif-card:hover { box-shadow: var(--shadow-lg); border-color: var(--teal); }
 .tarif-featured { border-color: var(--teal); background: var(--teal-pale); }
@@ -740,37 +737,54 @@ h2.light em { color: var(--teal); }
   display: inline-block; padding: 3px 10px; background: var(--teal);
   color: #fff; border-radius: 100px; font-size: .7rem; font-weight: 700;
   letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px;
+  align-self: flex-start;
 }
-.tarif-card h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; }
+.tarif-card h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+.tarif-sub { font-size: .8rem; color: var(--muted); margin-bottom: 16px; }
 .tarif-val {
-  font-family: var(--font); font-size: 3rem; font-weight: 800;
-  color: var(--teal); line-height: 1; margin-bottom: 24px;
+  font-family: var(--font); font-size: 2.8rem; font-weight: 800;
+  color: var(--teal); line-height: 1; margin-bottom: 20px;
   display: flex; align-items: flex-end; gap: 4px;
 }
-.tarif-unit { font-size: 1.1rem; font-weight: 600; line-height: 1.4; }
-.tarif-unit small { display: block; font-size: .75rem; font-weight: 500; color: var(--muted); }
+.tarif-unit { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.tarif-unit small { display: block; font-size: .7rem; font-weight: 500; color: var(--muted); }
 .tarif-includes {
   display: flex; flex-direction: column; gap: 10px;
-  margin-bottom: 28px; flex: 1;
+  margin-bottom: 24px; flex: 1;
 }
 .tarif-includes li {
   display: flex; align-items: flex-start; gap: 10px;
   font-size: .875rem; color: var(--text); line-height: 1.4;
 }
 .tarif-includes li svg { width: 16px; height: 16px; color: var(--teal); flex-shrink: 0; margin-top: 2px; }
-.tarif-card > p { font-size: .85rem; color: var(--muted); margin-bottom: 20px; line-height: 1.55; }
-.reductions {
-  display: flex; gap: 20px; justify-content: center;
-  flex-wrap: wrap;
+
+/* Tarifs secondaires */
+.tarif-secondary {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;
 }
-.reduc-item {
-  display: flex; align-items: center; gap: 10px;
-  padding: 12px 20px; background: var(--white);
-  border: 1px solid var(--border); border-radius: var(--radius);
-  font-size: .875rem; color: var(--muted);
+.tarif-mini {
+  flex: 1; min-width: 220px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; padding: 16px 20px;
+  border: 1.5px solid var(--border); border-radius: var(--radius-lg);
+  background: var(--white);
 }
-.reduc-item svg { width: 16px; height: 16px; color: var(--teal); }
-.reduc-item strong { color: var(--text); }
+.tarif-mini strong { display: block; font-size: .9rem; font-weight: 700; color: var(--text); }
+.tarif-mini span { font-size: .78rem; color: var(--muted); }
+.tarif-mini-val { font-size: 1.3rem; font-weight: 800; color: var(--teal); white-space: nowrap; }
+.tarif-mini-val small { font-size: .65rem; font-weight: 500; color: var(--muted); }
+.tarif-mini-free .tarif-free { color: #2E7D32; }
+
+/* Bannière réduction spéciale */
+.tarif-reduc-banner {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--black); color: #fff;
+  border-radius: var(--radius-lg); padding: 20px 28px;
+  margin-top: 8px;
+}
+.tarif-reduc-banner svg { width: 28px; height: 28px; color: var(--teal); flex-shrink: 0; }
+.tarif-reduc-banner strong { font-size: 1rem; font-weight: 800; }
+.tarif-reduc-banner span { display: block; font-size: .78rem; color: rgba(255,255,255,.55); margin-top: 2px; }
 
 /* ===== TÉMOIGNAGES ===== */
 .temo-grid {
