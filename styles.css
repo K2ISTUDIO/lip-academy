@@ -97,7 +97,7 @@ em { font-style: italic; }
 }
 
 .nav-logo { display: flex; align-items: center; flex-shrink: 0; cursor: pointer; }
-.logo-img { height: 44px; width: auto; }
+.logo-img { height: 58px; width: auto; }
 /* Hero sombre : logo fond noir (texte blanc visible sur fond sombre) */
 .logo-light { display: none; }
 .logo-dark-img { display: block; }
@@ -112,6 +112,27 @@ em { font-style: italic; }
   transition: color .2s, background .2s; cursor: pointer;
 }
 .nav-links a:hover { color: #fff; background: rgba(255,255,255,.1); }
+
+/* Dropdown partenaires */
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle { cursor: pointer; }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1C2330;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  padding: 8px;
+  min-width: 200px;
+  z-index: 200;
+  box-shadow: 0 12px 32px rgba(0,0,0,.4);
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: flex; flex-direction: column; }
+.nav-dropdown-menu a { color: var(--text) !important; font-size: .85rem; font-weight: 500; padding: 10px 14px !important; border-radius: 7px; text-decoration: none; white-space: nowrap; background: none !important; }
+.nav-dropdown-menu a:hover { background: rgba(61,189,182,.12) !important; color: var(--teal) !important; }
 
 .nav-cta {
   padding: 9px 18px; background: rgba(255,255,255,.15);
