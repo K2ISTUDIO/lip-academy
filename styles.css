@@ -115,7 +115,10 @@ em { font-style: italic; }
 
 /* Dropdown partenaires */
 .nav-dropdown { position: relative; }
-.nav-dropdown-toggle { cursor: pointer; }
+.nav-dropdown-toggle { cursor: pointer; color: rgba(255,255,255,.85) !important; font-size: .85rem; font-weight: 500; padding: 8px 12px; border-radius: 8px; text-decoration: none; }
+.nav-dropdown-toggle:hover { color: #fff !important; background: rgba(255,255,255,.1); }
+.nav.scrolled .nav-dropdown-toggle { color: var(--text) !important; }
+.nav.scrolled .nav-dropdown-toggle:hover { color: var(--teal) !important; }
 .nav-dropdown-menu {
   display: none;
   position: absolute;
