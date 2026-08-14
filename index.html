@@ -1267,10 +1267,6 @@
       if (e.target === this) omClose();
     });
 
-    // Affiche le popup auto après 8s (une seule fois par session)
-    if (!sessionStorage.getItem('om-shown')) {
-      setTimeout(() => { omOpen(); sessionStorage.setItem('om-shown', '1'); }, 8000);
-    }
 
     document.getElementById('om-form').addEventListener('submit', async function(e) {
       e.preventDefault();
