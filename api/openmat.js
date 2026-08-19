@@ -30,7 +30,7 @@ export default async function handler(req, res) {
             <div style="background:#1a2a28;padding:36px 32px;text-align:center">
               <p style="margin:0 0 10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#3DBDB6;font-weight:700">L.I.P ACADEMY — LOST IN PARADISE</p>
               <h1 style="margin:0 0 6px;font-size:26px;font-weight:800;color:#ffffff;line-height:1.2">🌴 Open Mat Gratuit · Spécial Été</h1>
-              <p style="margin:0;color:rgba(255,255,255,.6);font-size:14px">Août 2026 · À partir du 18 août</p>
+              <p style="margin:0;color:rgba(255,255,255,.6);font-size:14px">Août 2026 · À partir du 24 août</p>
             </div>
 
             <!-- BODY -->
@@ -63,7 +63,7 @@ export default async function handler(req, res) {
                 </tr>
                 <tr>
                   <td style="padding:11px 0;color:#888;vertical-align:top">Période</td>
-                  <td style="padding:11px 0;color:#222">Du 18 au 31 août 2026</td>
+                  <td style="padding:11px 0;color:#222">Du 24 au 31 août 2026</td>
                 </tr>
               </table>
 
