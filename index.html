@@ -1249,6 +1249,33 @@
       this.style.transform = 'translateX(-' + cur * 100 + '%)';
       document.getElementById('dojoDots').querySelectorAll('.dojo-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
     });
+
+    // Lightbox
+    const lb = document.createElement('div');
+    lb.id = 'dojo-lb';
+    lb.style.cssText = 'display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);align-items:center;justify-content:center;cursor:zoom-out;backdrop-filter:blur(6px)';
+    lb.innerHTML = '<img id="dojo-lb-img" style="max-width:94vw;max-height:94vh;border-radius:10px;box-shadow:0 24px 80px rgba(0,0,0,.8);object-fit:contain"><button id="dojo-lb-close" style="position:absolute;top:18px;right:22px;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.6rem;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>';
+    document.body.appendChild(lb);
+
+    document.getElementById('dojoTrack').querySelectorAll('img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.getElementById('dojo-lb-img').src = this.src;
+        document.getElementById('dojo-lb-img').alt = this.alt;
+        lb.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    lb.addEventListener('click', closeLb);
+    document.getElementById('dojo-lb-close').addEventListener('click', closeLb);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+    function closeLb() {
+      lb.style.display = 'none';
+      document.body.style.overflow = '';
+    }
   </script>
 </body>
 </html>
