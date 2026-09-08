@@ -1251,26 +1251,56 @@
     });
 
     // Lightbox
+    const lbImgs = Array.from(document.getElementById('dojoTrack').querySelectorAll('img'));
+    let lbIdx = 0;
+
     const lb = document.createElement('div');
     lb.id = 'dojo-lb';
-    lb.style.cssText = 'display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);align-items:center;justify-content:center;cursor:zoom-out;backdrop-filter:blur(6px)';
-    lb.innerHTML = '<img id="dojo-lb-img" style="max-width:94vw;max-height:94vh;border-radius:10px;box-shadow:0 24px 80px rgba(0,0,0,.8);object-fit:contain"><button id="dojo-lb-close" style="position:absolute;top:18px;right:22px;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.6rem;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>';
+    lb.style.cssText = 'display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);align-items:center;justify-content:center;backdrop-filter:blur(6px)';
+    lb.innerHTML = `
+      <img id="dojo-lb-img" style="max-width:88vw;max-height:88vh;border-radius:10px;box-shadow:0 24px 80px rgba(0,0,0,.8);object-fit:contain;pointer-events:none">
+      <button id="dojo-lb-close" style="position:absolute;top:18px;right:22px;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.6rem;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+      <button id="dojo-lb-prev" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;font-size:2rem;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center">&#8249;</button>
+      <button id="dojo-lb-next" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;font-size:2rem;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center">&#8250;</button>
+      <div id="dojo-lb-counter" style="position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:.85rem;font-family:sans-serif"></div>
+    `;
     document.body.appendChild(lb);
 
-    document.getElementById('dojoTrack').querySelectorAll('img').forEach(img => {
+    function lbShow(idx) {
+      lbIdx = (idx + lbImgs.length) % lbImgs.length;
+      document.getElementById('dojo-lb-img').src = lbImgs[lbIdx].src;
+      document.getElementById('dojo-lb-img').alt = lbImgs[lbIdx].alt;
+      document.getElementById('dojo-lb-counter').textContent = (lbIdx + 1) + ' / ' + lbImgs.length;
+    }
+
+    lbImgs.forEach((img, i) => {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', function(e) {
         e.stopPropagation();
-        document.getElementById('dojo-lb-img').src = this.src;
-        document.getElementById('dojo-lb-img').alt = this.alt;
         lb.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        lbShow(i);
       });
     });
 
-    lb.addEventListener('click', closeLb);
+    lb.addEventListener('click', function(e) { if (e.target === lb) closeLb(); });
     document.getElementById('dojo-lb-close').addEventListener('click', closeLb);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+    document.getElementById('dojo-lb-prev').addEventListener('click', e => { e.stopPropagation(); lbShow(lbIdx - 1); });
+    document.getElementById('dojo-lb-next').addEventListener('click', e => { e.stopPropagation(); lbShow(lbIdx + 1); });
+
+    // clavier + swipe
+    document.addEventListener('keydown', e => {
+      if (lb.style.display === 'none') return;
+      if (e.key === 'Escape') closeLb();
+      if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
+      if (e.key === 'ArrowLeft')  lbShow(lbIdx - 1);
+    });
+    let lbSx = 0;
+    lb.addEventListener('touchstart', e => { lbSx = e.touches[0].clientX; }, {passive: true});
+    lb.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - lbSx;
+      if (Math.abs(dx) > 40) lbShow(lbIdx + (dx < 0 ? 1 : -1));
+    }, {passive: true});
 
     function closeLb() {
       lb.style.display = 'none';
