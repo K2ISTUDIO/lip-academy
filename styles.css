@@ -327,6 +327,18 @@ h2.light em { color: var(--teal); }
   background: var(--off); border: 1px solid var(--border);
 }
 .photo-frame.tall { aspect-ratio: 3/4; }
+
+/* Carousel dojo */
+.dojo-carousel { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 3/4; background: var(--off); }
+.dojo-track { display: flex; height: 100%; transition: transform .45s cubic-bezier(.4,0,.2,1); }
+.dojo-track img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; }
+.dojo-prev, .dojo-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,.45); border: none; color: #fff; font-size: 1.6rem; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; transition: background .2s; }
+.dojo-prev { left: 10px; }
+.dojo-next { right: 10px; }
+.dojo-prev:hover, .dojo-next:hover { background: rgba(61,189,182,.8); }
+.dojo-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 2; }
+.dojo-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.4); cursor: pointer; transition: background .2s; border: none; padding: 0; }
+.dojo-dot.active { background: #3DBDB6; }
 .dark-frame { background: var(--dark-2); border-color: rgba(255,255,255,.08); }
 .photo-placeholder {
   width: 100%; height: 100%; min-height: 320px;

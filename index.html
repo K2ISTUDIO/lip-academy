@@ -82,7 +82,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=32">
+  <link rel="stylesheet" href="styles.css?v=33">
 </head>
 <body>
 <div class="site-wrapper">
@@ -814,8 +814,23 @@
     <div class="container">
       <div class="split reverse">
         <div class="split-visual">
-          <div class="photo-frame tall">
-            <img src="LIP-DOJO.png" alt="Dojo L.I.P Academy — Fit'Teix" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
+          <div class="dojo-carousel" id="dojoCarousel">
+            <div class="dojo-track" id="dojoTrack">
+              <img src="images/dojo/lip-x-fitteix1.jpg"  alt="Dojo L.I.P Academy — Fit'Teix, salle de JJB Quincy-Voisins" loading="lazy">
+              <img src="images/dojo/lip-x-fitteix10.jpg" alt="Tatamis L.I.P Academy — espace BJJ Val d'Europe" loading="lazy">
+              <img src="images/dojo/lip-x-fitteix12.jpg" alt="Cours Jiu-Jitsu Brésilien Fit'Teix Quincy-Voisins" loading="lazy">
+              <img src="images/dojo/lip-x-fitteix14.jpg" alt="Entraînement BJJ L.I.P Academy 77" loading="lazy">
+              <img src="images/dojo/lip-x-fitteix20.jpg" alt="Salle de sport Fit'Teix — partenaire LIP Academy" loading="lazy">
+              <img src="images/dojo/lip-x-fitteix21.jpg" alt="Cours No-Gi grappling Val d'Europe Seine-et-Marne" loading="lazy">
+              <img src="images/dojo/lip-x-fitteix23.jpg" alt="Open mat adhérents L.I.P Academy Quincy-Voisins" loading="lazy">
+              <img src="images/dojo/lip-x-fitteix25.jpg" alt="Ambiance dojo BJJ Lost In Paradise Academy" loading="lazy">
+              <img src="images/dojo/lip-x-fitteix26.jpg" alt="L.I.P Academy x Fit'Teix — complexe sportif 77" loading="lazy">
+              <img src="images/dojo/lip-x-fitteix29.jpg" alt="Tatamis JJB — L.I.P Academy Quincy-Voisins" loading="lazy">
+              <img src="images/dojo/lip-x-fitteix32.jpg" alt="Dojo BJJ Seine-et-Marne — cours adultes et enfants" loading="lazy">
+            </div>
+            <button class="dojo-prev" onclick="dojoSlide(-1)" aria-label="Image précédente">&#8249;</button>
+            <button class="dojo-next" onclick="dojoSlide(1)" aria-label="Image suivante">&#8250;</button>
+            <div class="dojo-dots" id="dojoDots"></div>
           </div>
         </div>
         <div class="split-text">
@@ -1188,5 +1203,52 @@
 
   <script src="script.js?v=8"></script>
 
+  <script>
+    (function() {
+      const track = document.getElementById('dojoTrack');
+      const dotsEl = document.getElementById('dojoDots');
+      const imgs = track.querySelectorAll('img');
+      let cur = 0, timer;
+
+      imgs.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'dojo-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Image ' + (i+1));
+        d.onclick = () => goTo(i);
+        dotsEl.appendChild(d);
+      });
+
+      function goTo(n) {
+        cur = (n + imgs.length) % imgs.length;
+        track.style.transform = 'translateX(-' + cur * 100 + '%)';
+        dotsEl.querySelectorAll('.dojo-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+        clearInterval(timer);
+        timer = setInterval(() => goTo(cur + 1), 4500);
+      }
+
+      timer = setInterval(() => goTo(cur + 1), 4500);
+
+      // swipe support
+      let sx = 0;
+      track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive: true});
+      track.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - sx;
+        if (Math.abs(dx) > 40) goTo(cur + (dx < 0 ? 1 : -1));
+      }, {passive: true});
+    })();
+
+    function dojoSlide(dir) {
+      document.getElementById('dojoTrack').dispatchEvent(new CustomEvent('manualSlide', {detail: dir}));
+    }
+
+    document.getElementById('dojoTrack').addEventListener('manualSlide', function(e) {
+      const imgs = this.querySelectorAll('img');
+      let cur = Math.round(-parseFloat(this.style.transform.replace('translateX(','')) / 100);
+      cur = isNaN(cur) ? 0 : cur;
+      cur = (cur + e.detail + imgs.length) % imgs.length;
+      this.style.transform = 'translateX(-' + cur * 100 + '%)';
+      document.getElementById('dojoDots').querySelectorAll('.dojo-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+    });
+  </script>
 </body>
 </html>
