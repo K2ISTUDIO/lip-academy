@@ -519,6 +519,7 @@ h2.light em { color: var(--teal); }
 }
 .ptab.active { background: var(--black); color: #fff; border-color: var(--black); }
 .planning-wrap.hidden { display: none; }
+.planning-wrap.tab-prives-wrap { display: block; }
 
 .planning-wrap {
   display: grid; grid-template-columns: repeat(5, 1fr);
