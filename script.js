@@ -114,6 +114,10 @@ document.querySelectorAll('.ptab').forEach(tab => {
     document.querySelectorAll('.planning-wrap').forEach(wrap => {
       wrap.classList.toggle('hidden', wrap.id !== 'tab-' + target);
     });
+    const isPrives = target === 'prives';
+    document.querySelectorAll('.planning-meta, .planning-cta').forEach(el => {
+      if (!el.closest('#tab-prives')) el.classList.toggle('hidden', isPrives);
+    });
   });
 });
 
