@@ -806,6 +806,7 @@ h2.light em { color: var(--teal); }
   gap: 16px; margin-bottom: 28px;
 }
 .tarif-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.tarif-grid-2 { grid-template-columns: repeat(2, minmax(0, 420px)); justify-content: center; }
 .tarif-card {
   position: relative; border: 1.5px solid var(--border);
   border-radius: var(--radius-lg); padding: 32px 28px;
