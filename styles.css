@@ -698,6 +698,7 @@ h2.light em { color: var(--teal); }
   transition: border-color .2s, box-shadow .2s;
 }
 .team-card.featured { background: rgba(61,189,182,.06); border-color: rgba(61,189,182,.2); }
+.team-card.team-card-centered { grid-column: 2; }
 .team-card.placeholder { opacity: .6; }
 .team-photo {
   position: relative; aspect-ratio: 3/4; overflow: hidden;
