@@ -598,7 +598,7 @@ h2.light em { color: var(--teal); }
   width: 90px; height: 90px; border-radius: 50%; object-fit: cover; object-position: top;
   border: 3px solid var(--teal);
 }
-.prive-coaches-row { display: flex; gap: 10px; justify-content: center; }
+.prive-coaches-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 .prive-coaches-row img {
   width: 60px; height: 60px; border-radius: 50%; object-fit: cover; object-position: top;
   border: 2px solid var(--border);
@@ -988,6 +988,7 @@ h2.light em { color: var(--teal); }
   .burger { display: flex; }
   .split { grid-template-columns: 1fr; gap: 48px; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-card.team-card-centered { grid-column: 1 / -1; max-width: 340px; margin: 0 auto; }
   .newsletter-wrap { grid-template-columns: 1fr; gap: 40px; }
   .split.reverse .split-visual { order: 0; }
   .editorial-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -1009,6 +1010,7 @@ h2.light em { color: var(--teal); }
 @media (max-width: 768px) {
   .planning-wrap { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
+  .team-card.team-card-centered { grid-column: 1; }
   .nl-row { flex-direction: column; }
   .nl-row input { border-radius: var(--radius); }
   .nl-row .btn-teal { border-radius: var(--radius); justify-content: center; }
